@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,16 +6,49 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component: () => import('../pages/HomePage.vue'),
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      path: '/shedule',
+      name: 'shedule',
+      component: () => import('../pages/ShedulePage.vue'),
     },
+    {
+      path: '/training_sessions',
+      name: 'training_sessions',
+      component: () => import('../pages/TrainingSessionsPage.vue'),
+    },
+    {
+      path: '/rooms_list',
+      name: 'rooms_list',
+      component: () => import('../pages/RoomsListPage.vue'),
+    },
+    {
+      path: '/users_list',
+      name: 'users_list',
+      component: () => import('../pages/UsersPage.vue'),
+    },
+    {
+      path: '/study_groups',
+      name: 'study_groups',
+      component: () => import('../pages/StudyGroupsPage.vue'),
+    },
+    {
+      path: '/devices_list',
+      name: 'devices_list',
+      component: () => import('../pages/DevicesListPage.vue'),
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('../pages/SettingsPage.vue'),
+    },
+    {
+      path: '/archive',
+      name: 'archive',
+      component: () => import('../pages/ArchivePage.vue'),
+    },
+    
   ],
 })
 
